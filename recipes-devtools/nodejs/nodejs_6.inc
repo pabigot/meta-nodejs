@@ -8,13 +8,14 @@ COMPATIBLE_MACHINE_armv4 = "(!.*armv4).*"
 COMPATIBLE_MACHINE_mips64 = "(!.*mips64).*"
 
 INC_PR = "r1"
-PR = "${INC_PR}.8"
+PR = "${INC_PR}.9"
 
 PROVIDES = "node"
 RPROVIDES_${PN} = "node"
 
 SRC_URI = "https://nodejs.org/dist/v${PV}/node-v${PV}.tar.gz;name=src \
-           file://no-registry_6.x.patch"
+           file://no-registry_6.x.patch \
+           file://v6x-gcc7-fixes.patch"
 
 S = "${WORKDIR}/node-v${PV}"
 
